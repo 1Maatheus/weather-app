@@ -1,0 +1,38 @@
+.main {
+  max-width: 1200px;
+
+  padding: 1em 0em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  width: 450px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  .city {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    p {
+      font-size: 1.4em;
+      color: #fff;
+    }
+    .location {
+      font-size: 1.2em;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .main-content {
+    width: 320px;
+  }
+}

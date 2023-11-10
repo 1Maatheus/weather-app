@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../assets/background-image.svg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto Mono", monospace;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em 0em;
+  display: flex;
+  justify-content: center;
+}
+
+.search-section {
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.search-section .input-search {
+  width: 320px;
+  padding: 1em;
+  border-radius: 10em;
+  border: none;
+  transition: 0.2s ease;
+  font-size: 1.15em;
+}
+.search-section .input-search:focus {
+  outline: none;
+}
+
+.btn-search {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 10em;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.btn-search:active {
+  position: relative;
+  top: 2px;
+}
+.btn-search:hover {
+  background-color: rgb(228, 228, 228);
+}
+
+@media (max-width: 420px) {
+  .header {
+    padding: 0;
+  }
+  .search-section {
+    gap: 0.5em;
+  }
+  .search-section .input-search {
+    width: 260px;
+  }
+}
+.main {
+  max-width: 1200px;
+  padding: 1em 0em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  width: 450px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.main-content .city {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+.main-content .city p {
+  font-size: 1.4em;
+  color: #fff;
+}
+.main-content .city .location {
+  font-size: 1.2em;
+}
+
+@media (max-width: 420px) {
+  .main-content {
+    width: 320px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
