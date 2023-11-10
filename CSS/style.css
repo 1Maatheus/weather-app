@@ -78,6 +78,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -91,16 +92,101 @@ body {
   gap: 1.5em;
 }
 .main-content .city p {
-  font-size: 1.4em;
+  font-size: 1.7em;
   color: #fff;
 }
 .main-content .city .location {
-  font-size: 1.2em;
+  font-size: 1.5em;
+}
+
+.weather-icon {
+  display: flex;
+  align-items: center;
+  margin-top: 3em;
+}
+.weather-icon .weather-img {
+  width: 130px;
+  height: 90px;
+  display: inline;
+}
+
+.temperature {
+  color: #fff;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.weather-infos {
+  margin-top: 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+.weather-infos .weather-wind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather-infos .weather-wind span {
+  color: #fff;
+  font-weight: 300;
+  font-size: 0.6;
+  text-align: center;
+}
+.weather-infos .weather-wind p {
+  color: #fff;
+  margin-top: 0.7em;
+}
+.weather-infos .weather-wind .wind {
+  font-size: 2.1em;
+}
+.weather-infos .weather-humidity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather-infos .weather-humidity span {
+  color: #fff;
+  font-weight: 300;
+  font-size: 0.6;
+  text-align: center;
+}
+.weather-infos .weather-humidity p {
+  color: #fff;
+  margin-top: 0.7em;
+}
+.weather-infos .weather-humidity .droplet {
+  font-size: 2.1em;
 }
 
 @media (max-width: 420px) {
   .main-content {
-    width: 320px;
+    width: 345px;
+    margin-top: 2.5em;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .main-content .city p {
+    font-size: 1.4em;
+    color: #fff;
+  }
+  .main-content .city .location {
+    font-size: 1.2em;
+  }
+  .temperature {
+    color: #fff;
+    font-weight: bold;
+    font-size: 2.5em;
+  }
+  .weather-icon {
+    display: flex;
+    align-items: center;
+    margin-top: 3em;
+  }
+  .weather-icon .weather-img {
+    width: 110px;
+    height: 70px;
+    display: inline;
   }
 }
 
