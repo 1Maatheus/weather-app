@@ -5,7 +5,7 @@ import { FaSearch } from "react-icons/fa";
 
 const Input = () => {
   return (
-    <form className="flex items-center md:w-2/4 w-full">
+    <form className="flex items-center md:w-2/4 w-full order-2 md:order-1">
       <input
         className="p-2 w-full bg-transparent border-2 rounded-lg placeholder-white outline-none text-white"
         type="text"
