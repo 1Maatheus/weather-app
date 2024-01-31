@@ -12,7 +12,7 @@ export default function Home() {
         <div className="bg-white/25 w-full flex-col h-fit ">
           <div className="flex flex-col md:flex-row justify-between items-center p-12">
             <Input />
-            <h1 className="mb-8 md:mb-0 order-1 text-white py-2 px-4 rounded-xl italic font-bold">
+            <h1 className="mb-9 md:mb-0 order-1 text-white py-2 px-4 rounded-xl italic font-bold">
               Weather App.
             </h1>
           </div>
