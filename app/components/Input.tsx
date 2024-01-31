@@ -9,7 +9,7 @@ const Input = () => {
       <input
         className="p-2 w-full bg-transparent border-2 rounded-lg placeholder-white outline-none text-white"
         type="text"
-        placeholder="Insira o nome da cidade"
+        placeholder="Cidade..."
       />
       <div className="ml-[-25px] text-white cursor-pointer">
         <FaSearch />
