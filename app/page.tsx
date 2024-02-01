@@ -2,13 +2,16 @@
 
 import React from "react";
 import Input from "./components/Input";
+import Current from "./components/Current";
+import WeekForecast from "./components/WeekForecast";
+import WeatherDetails from "./components/WeatherDetails";
 
 export default function Home() {
   const [data, setData] = React.useState({});
   const [location, setLocation] = React.useState("");
   const [error, setError] = React.useState("");
 
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=b169adcee3ed43d5ad7220536243101&q=${location}&days=7&aqi=yes&alerts=yes`;
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=&q=${location}&days=7&aqi=yes&alerts=yes`;
 
   const handleSearch = async (event: React.KeyboardEvent) => {
     if (event.key === "Enter" || event.type === "click") {
@@ -30,6 +33,34 @@ export default function Home() {
     }
   };
 
+  let content;
+  if (Object.keys(data).length === 0 && error === "") {
+    content = (
+      <div>
+        <h2>Bem-vindo ao Weather App. </h2>
+      </div>
+    );
+  } else if (error !== "") {
+    content = (
+      <div>
+        <p>Cidade não encontrada.</p>
+        <p>Por favor, tente novamente.</p>
+      </div>
+    );
+  } else {
+    content = (
+      <>
+        <div>
+          <Current data={data} />
+          <WeekForecast />
+        </div>
+        <div>
+          <WeatherDetails />
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <div
@@ -43,8 +74,7 @@ export default function Home() {
               Weather App.
             </h1>
           </div>
-
-          {data.current && <div>{data.current.temp_c}</div>}
+          {content}
         </div>
       </div>
     </>
