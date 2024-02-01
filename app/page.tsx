@@ -5,13 +5,14 @@ import Input from "./components/Input";
 import Current from "./components/Current";
 import WeekForecast from "./components/WeekForecast";
 import WeatherDetails from "./components/WeatherDetails";
+import "./globals.css";
 
 export default function Home() {
   const [data, setData] = React.useState({});
   const [location, setLocation] = React.useState("");
   const [error, setError] = React.useState("");
 
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=&q=${location}&days=7&aqi=yes&alerts=yes`;
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=b169adcee3ed43d5ad7220536243101&q=${location}&days=7&aqi=yes&alerts=yes`;
 
   const handleSearch = async (event: React.KeyboardEvent) => {
     if (event.key === "Enter" || event.type === "click") {
@@ -36,26 +37,30 @@ export default function Home() {
   let content;
   if (Object.keys(data).length === 0 && error === "") {
     content = (
-      <div>
-        <h2>Bem-vindo ao Weather App. </h2>
+      <div className="text-white text-center h-screen sm:h-[calc(100vh-13.75rem)] mt-[5rem]">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+          Bem-vindo ao Weather App.{" "}
+        </h2>
       </div>
     );
   } else if (error !== "") {
     content = (
-      <div>
-        <p>Cidade não encontrada.</p>
-        <p>Por favor, tente novamente.</p>
+      <div className="text-white text-center h-screen sm:h-[calc(100vh-13.75rem)] mt-[5rem]">
+        <p className="text-2xl sm:text-3xl font-bold mb-4">
+          Cidade não encontrada.
+        </p>
+        <p className="text-xl">Por favor, tente novamente.</p>
       </div>
     );
   } else {
     content = (
       <>
-        <div>
+        <div className=" animate flex flex-col lg:flex-row py-1 px-12 sm:px-12 sm:py-1 items-center justify-between">
           <Current data={data} />
-          <WeekForecast />
+          <WeekForecast data={data} />
         </div>
-        <div>
-          <WeatherDetails />
+        <div className="animate">
+          <WeatherDetails data={data} />
         </div>
       </>
     );
@@ -64,10 +69,10 @@ export default function Home() {
   return (
     <>
       <div
-        className="bg-cover- bg-gradient-to-b from-sky-500 to-sky-300
-       h-screen"
+        className="bg-cover sm:bg-gradient-to-r bg-gradient-to-b from-[#0875DC] to-[#8FADF1]
+       h-fit"
       >
-        <div className="bg-white/25 w-full flex-col h-fit ">
+        <div className="bg-white/15 w-full flex-col h-fit sm:h-screen">
           <div className="flex flex-col md:flex-row justify-between items-center p-12">
             <Input handleSearch={handleSearch} setLocation={setLocation} />
             <h1 className="mb-8 md:mb-0 order-1 text-white py-2 px-4 rounded-xl italic font-bold">
