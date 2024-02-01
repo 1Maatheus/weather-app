@@ -97,7 +97,7 @@ export default function Home() {
               handleSearch={handleSearch}
               setLocation={setLocation}
             />
-            <h1 className="mb-8 md:mb-0 order-1 text-white py-2 px-4 rounded-xl italic font-bold">
+            <h1 className="mb-9 md:mb-0 order-1 text-white py-2 px-4 rounded-xl italic font-bold">
               Weather App.
             </h1>
           </div>
