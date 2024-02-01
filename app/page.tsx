@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import Input from "./components/Input";
 import Current from "./components/Current";
 import WeekForecast from "./components/WeekForecast";
@@ -14,7 +14,7 @@ export default function Home() {
 
   const url = `http://api.weatherapi.com/v1/forecast.json?key=b169adcee3ed43d5ad7220536243101&q=${location}&days=7&aqi=yes&alerts=yes`;
 
-  const handleSearch = async (event: React.KeyboardEvent) => {
+  const handleSearch = async (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter" || event.type === "click") {
       event.preventDefault();
       try {

@@ -4,7 +4,7 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 
 type Props = {
-  handleSearch: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  handleSearch?(): (event: React.KeyboardEvent<HTMLInputElement>) => void;
   setLocation: React.Dispatch<React.SetStateAction<string>>;
 };
 
