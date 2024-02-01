@@ -10,6 +10,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Weather App - Next.js",
+  viewport: "width=device-width, initial-scale=1",
   description: "Weather App built with Next.js",
 };
 
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className={poppins.className}>{children}</body>
     </html>
   );

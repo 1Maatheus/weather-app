@@ -1,6 +1,7 @@
 "use client";
 
 import React, { MouseEventHandler } from "react";
+import Head from "next/head";
 import Input from "./components/Input";
 import Current from "./components/Current";
 import WeekForecast from "./components/WeekForecast";
@@ -86,6 +87,12 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
+      </Head>
       <div
         className="bg-cover sm:bg-gradient-to-r bg-gradient-to-b from-[#0875DC] to-[#8FADF1]
        h-fit"
