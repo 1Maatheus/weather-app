@@ -2,23 +2,26 @@ import React from "react";
 import { getCurrentDate } from "../utils/currentDate";
 import { FaLocationDot } from "react-icons/fa6";
 
-interface CurrentProps {
+type CurrentProps = {
   data: {
     current: {
-      condition: {
-        icon: string;
-        text: string;
-      };
       temp_c: number;
+      condition: {
+        text: string;
+        icon: string;
+      };
     };
     location: {
       name: string;
       region: string;
     };
-  };
-}
+    forecast: {
+      forecastday: [];
+    };
+  } | null;
+};
 
-const Current = ({ data }: CurrentProps) => {
+const Current = ({ data }: CurrentProps | any) => {
   const currentDate = getCurrentDate();
   const weatherIcon = data.current.condition.icon;
   return (

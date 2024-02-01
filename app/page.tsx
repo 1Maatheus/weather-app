@@ -14,8 +14,26 @@ export default function Home() {
 
   const url = `http://api.weatherapi.com/v1/forecast.json?key=b169adcee3ed43d5ad7220536243101&q=${location}&days=7&aqi=yes&alerts=yes`;
 
+  const handleClick = async (event: React.MouseEvent<SVGElement>) => {
+    event.preventDefault();
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error();
+      }
+      const data = await response.json();
+      setData(data);
+      setLocation("");
+      setError("");
+    } catch (error) {
+      setError("Cidade inválida.");
+      setData({});
+      setLocation("");
+    }
+  };
+
   const handleSearch = async (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter" || event.type === "click") {
+    if (event.key === "Enter") {
       event.preventDefault();
       try {
         const response = await fetch(url);
@@ -74,7 +92,11 @@ export default function Home() {
       >
         <div className="bg-white/15 w-full flex-col h-fit sm:h-screen">
           <div className="flex flex-col md:flex-row justify-between items-center p-12">
-            <Input handleSearch={handleSearch} setLocation={setLocation} />
+            <Input
+              handleClick={handleClick}
+              handleSearch={handleSearch}
+              setLocation={setLocation}
+            />
             <h1 className="mb-8 md:mb-0 order-1 text-white py-2 px-4 rounded-xl italic font-bold">
               Weather App.
             </h1>

@@ -27,7 +27,7 @@ interface WeatherDetailsProps {
   };
 }
 
-const WeatherDetails = ({ data }: WeatherDetailsProps) => {
+const WeatherDetails = ({ data }: WeatherDetailsProps | any) => {
   return (
     <>
       <div className="p-12">

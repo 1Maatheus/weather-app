@@ -4,15 +4,12 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 
 type Props = {
-  handleSearch?(): (
-    event:
-      | React.KeyboardEvent<HTMLInputElement>
-      | React.MouseEventHandler<SVGElement>
-  ) => void;
+  handleSearch: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  handleClick: (event: React.MouseEvent<SVGElement>) => void;
   setLocation: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Input = ({ handleSearch, setLocation }: Props) => {
+const Input = ({ handleSearch, setLocation, handleClick }: Props) => {
   return (
     <form className="flex items-center md:w-2/4 w-full order-2 md:order-1">
       <input
@@ -23,7 +20,7 @@ const Input = ({ handleSearch, setLocation }: Props) => {
         placeholder="Insira o nome da cidade"
       />
       <div className="ml-[-25px] text-white cursor-pointer">
-        <FaSearch onClick={handleSearch} />
+        <FaSearch onClick={handleClick} />
       </div>
     </form>
   );
