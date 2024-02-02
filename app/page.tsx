@@ -13,7 +13,7 @@ export default function Home() {
   const [location, setLocation] = React.useState("");
   const [error, setError] = React.useState("");
 
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=b169adcee3ed43d5ad7220536243101&q=${location}&days=7&aqi=yes&alerts=yes`;
+  const url = `https://api.hgbrasil.com/weather?format=json-cors&key=770f4924&city_name=${location}`;
 
   const handleClick = async (event: React.MouseEvent<SVGElement>) => {
     event.preventDefault();
@@ -94,17 +94,17 @@ export default function Home() {
         />
       </Head>
       <div
-        className="bg-cover sm:bg-gradient-to-r bg-gradient-to-b from-[#0875DC] to-[#8FADF1]
+        className="bg-cover bg-gradient-to-b from-[#0875DC] to-[#8FADF1]
        h-fit"
       >
-        <div className="bg-white/15 w-full flex-col h-fit sm:h-screen">
+        <div className="bg-white/ w-full flex-col h-fit">
           <div className="flex flex-col md:flex-row justify-between items-center p-12">
             <Input
               handleClick={handleClick}
               handleSearch={handleSearch}
               setLocation={setLocation}
             />
-            <h1 className="mb-9 md:mb-0 order-1 text-white py-2 px-4 rounded-xl italic font-bold">
+            <h1 className="mb-8 md:mb-0 order-1 text-white py-2 px-4 rounded-xl italic font-bold">
               Weather App.
             </h1>
           </div>

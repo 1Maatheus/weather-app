@@ -10,7 +10,6 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Weather App - Next.js",
-  viewport: "width=device-width, initial-scale=1",
   description: "Weather App built with Next.js",
 };
 

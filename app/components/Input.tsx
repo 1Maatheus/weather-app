@@ -19,7 +19,7 @@ const Input = ({ handleSearch, setLocation, handleClick }: Props) => {
         type="text"
         placeholder="Insira o nome da cidade"
       />
-      <div className="ml-[-25px] text-white cursor-pointer">
+      <div className="ml-[-40px]  text-white cursor-pointer">
         <FaSearch onClick={handleClick} />
       </div>
     </form>

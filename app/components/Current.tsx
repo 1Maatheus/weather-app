@@ -4,26 +4,18 @@ import { FaLocationDot } from "react-icons/fa6";
 
 type CurrentProps = {
   data: {
-    current: {
-      temp_c: number;
-      condition: {
-        text: string;
-        icon: string;
-      };
+    results: {
+      condition_slug: string;
+      temp: number;
+      description: number;
+      city: string;
     };
-    location: {
-      name: string;
-      region: string;
-    };
-    forecast: {
-      forecastday: [];
-    };
-  } | null;
+  };
 };
 
 const Current = ({ data }: CurrentProps | any) => {
   const currentDate = getCurrentDate();
-  const weatherIcon = data.current.condition.icon;
+  const weatherIcon = `https://assets.hgbrasil.com/weather/icons/conditions/${data.results.condition_slug}.svg`;
   return (
     <>
       <div className="flex flex-col mb-8 md:mb-8 items-center text-center lg:items-start lg:text-left gap-2 w-full sm:w-1/2">
@@ -37,24 +29,22 @@ const Current = ({ data }: CurrentProps | any) => {
               <img
                 className="w-[3.2rem] object-cover hidden lg:block"
                 src={weatherIcon}
-                alt={data.current.condition.text}
+                alt="Weather Icon"
               />
             </div>
           )}
         </div>
         <div>
           <p className="text-5xl text-white">
-            {data.current.temp_c.toFixed()}
+            {data.results.temp.toFixed()}
             <span className="text-xl absolute ml-2"> °C</span>
           </p>
-          <span className="text-white">{data.current.condition.text}</span>
+          <span className="text-white">{data.results.description}</span>
         </div>
         <div>
           <div className="flex items-center text-black bg-white/90 px-2 py-2 rounded-xl gap-3 w-full">
             <FaLocationDot />
-            <span>
-              {data.location.name}, {data.location.region}
-            </span>
+            <span>{data.results.city}</span>
           </div>
         </div>
       </div>
